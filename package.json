@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://thespirit3000.github.io/crypto",
+  "homepage": "https://thespirit3000.github.io/crypto",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
