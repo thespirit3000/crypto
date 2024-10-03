@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Layout } from "antd";
-import Content from "./Content";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
 
 const contentStyle: React.CSSProperties = {
   textAlign: "center",
@@ -17,7 +17,7 @@ export default class AppLayout extends Component {
       <Layout>
         <Header />
         <Layout.Content style={contentStyle}>
-          <Content />
+          <Outlet />
         </Layout.Content>
         <Footer />
       </Layout>
