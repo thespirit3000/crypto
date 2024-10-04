@@ -1,26 +1,16 @@
-import React, { Component } from "react";
-import { Layout } from "antd";
-import Header from "./Header";
+import { Component } from "react";
 import Footer from "./Footer";
-import { Outlet } from "react-router-dom";
-
-const contentStyle: React.CSSProperties = {
-  textAlign: "center",
-  minHeight: "calc(100vh - 2*64px)",
-  color: "#fff",
-  backgroundColor: "#0958d9",
-};
+import Header from "./Header";
+import Content from "./Content";
 
 export default class AppLayout extends Component {
   render() {
     return (
-      <Layout>
+      <div className="flex flex-col">
         <Header />
-        <Layout.Content style={contentStyle}>
-          <Outlet />
-        </Layout.Content>
+        <Content />
         <Footer />
-      </Layout>
+      </div>
     );
   }
 }
