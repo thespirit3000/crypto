@@ -1,20 +1,37 @@
-const navItems = [
-  { id: 1, text: "Home" },
-  { id: 2, text: "Company" },
-  { id: 3, text: "About" },
-  { id: 4, text: "Dash" },
+import {
+  FaUser,
+  FaAngellist,
+  FaShoppingCart,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+
+const navLinks = [
+  { id: 1, title: "Home", url: "/" },
+  { id: 2, title: "About", url: "/about" },
+  { id: 3, title: "Services", url: "/services" },
+  { id: 4, title: "Contact", url: "/contact" },
+];
+
+const iconList = [
+  { icon: <FaUser /> },
+  { icon: <FaAngellist /> },
+  { icon: <FaShoppingCart /> },
+  { icon: <FaBars /> },
+  { icon: <FaTimes /> },
 ];
 
 const Menu = () => {
   return (
     <nav className="bg-gray-800 w-full">
       <ul className="flex flex-wrap justify-around items-center h-full">
-        {navItems.map((item) => (
+        {navLinks.map((item, index) => (
           <li
             key={item.id}
-            className="text-gray-light hover:text-yellow transition-colors"
+            className="flex flex-col items-center text-gray-light hover:text-yellow transition-colors"
           >
-            <a href="#">{item.text}</a>
+            <div>{iconList[index].icon}</div>
+            <a href="#">{item.title}</a>
           </li>
         ))}
       </ul>
