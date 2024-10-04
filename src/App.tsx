@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 import AppLayout from "./components/layout/AppLayout";
-//import { TonConnectUIProvider } from "@tonconnect/ui-react";
 
-//const manifestURL =   "https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json";
 function App() {
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
@@ -14,11 +12,6 @@ function App() {
   }, []);
 
   return <AppLayout />; // j(
-
-  // <TonConnectUIProvider manifestUrl={manifestURL}>
-  //   <AppLayout />
-  // </TonConnectUIProvider>
-  //  );
 }
 
 export default App;
