@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import "./App.css";
-import AppLayout from "./components/layout/AppLayout";
-import MainPage from "./pages/MainPage";
-import UserPage from "./pages/UserPage";
-import TasksPage from "./pages/TasksPage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+
+const outletStyle: React.CSSProperties = {
+  minHeight: "calc(100vh - 2*64px)",
+};
 
 function App() {
   useEffect(() => {
@@ -16,15 +18,13 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/tasks" element={<TasksPage />} />
-          <Route path="/user" element={<UserPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div className="flex flex-col">
+      <Header />
+      <div style={outletStyle}>
+        <Outlet />
+      </div>
+      <Footer />
+    </div>
   ); //
 }
 
