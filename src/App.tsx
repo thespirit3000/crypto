@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import "./App.css";
 import AppLayout from "./components/layout/AppLayout";
+import MainPage from "./pages/MainPage";
+import UserPage from "./pages/UserPage";
+import TasksPage from "./pages/TasksPage";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -11,7 +15,17 @@ function App() {
     }
   }, []);
 
-  return <AppLayout />; // j(
+  return (
+    <HashRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/tasks" element={<TasksPage />} />
+          <Route path="/user" element={<UserPage />} />
+        </Route>
+      </Routes>
+    </HashRouter>
+  ); //
 }
 
 export default App;
