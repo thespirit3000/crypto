@@ -4,7 +4,7 @@ import AppLayout from "./components/layout/AppLayout";
 import MainPage from "./pages/MainPage";
 import UserPage from "./pages/UserPage";
 import TasksPage from "./pages/TasksPage";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<MainPage />} />
@@ -24,7 +24,7 @@ function App() {
           <Route path="/user" element={<UserPage />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   ); //
 }
 
