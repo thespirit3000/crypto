@@ -5,12 +5,13 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const navLinks = [
-  { id: 1, title: "Home", url: "/" },
-  { id: 2, title: "About", url: "/about" },
-  { id: 3, title: "Services", url: "/services" },
-  { id: 4, title: "Contact", url: "/contact" },
+  { id: 1, title: "Main", url: "/" },
+  { id: 2, title: "Tasks", url: "/tasks" },
+  { id: 3, title: "User", url: "/user" },
+  { id: 4, title: "Referals", url: "/referals" },
 ];
 
 const iconList = [
@@ -28,10 +29,10 @@ const Menu = () => {
         {navLinks.map((item, index) => (
           <li
             key={item.id}
-            className="flex flex-col items-center text-gray-light hover:text-yellow transition-colors"
+            className="flex flex-col justify-center items-center text-gray-light hover:text-yellow transition-colors size-16 "
           >
             <div>{iconList[index].icon}</div>
-            <a href="#">{item.title}</a>
+            <Link to={item.url}>{item.title}</Link>
           </li>
         ))}
       </ul>
